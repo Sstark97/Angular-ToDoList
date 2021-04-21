@@ -1,0 +1,25 @@
+<!-- <h2>Clicks: {{clicks}}</h2> -->
+<header>
+    <nav class = "navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="d-flex align-items-center justify-content-center w-100">
+            <h2 class="me-2">ToDoList</h2>
+            <input class="w-25 me-1" [(ngModel)] = "task1.title" type="text" (keyup.enter) = "add()">
+            <button class="btn btn-danger w-10 me-2" (click) = "add()" >Add</button>
+            <button class="btn btn-danger w-10 me-2" (click) = "removeAll()"  >RemoveAll</button>
+            <button class="btn btn-danger w-10 me-2" (click) = "completeAll()" >CompleteAll</button>
+            <button class="btn btn-danger w-10 me-2" (click) = "filterToDay()" >ToDay</button>
+            
+        </div>
+        
+    </nav>
+</header>
+
+
+    <ul class="d-flex flex-column align-items-center justify-content-center">
+        <li class="d-flex flex-row align-items-center justify-content-start w-50 border rounded bg-seconday" *ngFor = "let item of taskObject,index as i">
+            <app-to-do class="w-100" [i] = "i" [task] = "taskObject" [present] = "present"
+            (removeParent) = "remove($event)" (completeParent) = "complete($event)"></app-to-do>
+        </li>
+    </ul>
+
+    <p class="text-center text-success fs-2">{{congratulations}}</p>

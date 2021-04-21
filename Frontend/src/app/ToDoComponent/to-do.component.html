@@ -1,0 +1,6 @@
+<div class="d-flex align-items-center justify-content-start w-100">
+    <input class="me-4" type="checkbox" (click) = "complete(i)" [checked] = "task[i].complete">
+    <p class="me-4 w-100 text-left mt-2 fs-3" [class.tachado] = "task[i].complete == true" [class.hoy] = "task[i].Day == present">{{task[i].title}}</p>
+    <button class="btn btn-outline-danger me-4" (click) = "remove(task[i].title)">Remove</button>
+</div>
+

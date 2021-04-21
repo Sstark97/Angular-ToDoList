@@ -1,0 +1,12 @@
+.tachado{
+    text-decoration:line-through;
+    color: #000!important;
+}
+
+.hoy{
+    color: red;
+}
+
+ul{
+    margin: 0 0 0 0;
+}
